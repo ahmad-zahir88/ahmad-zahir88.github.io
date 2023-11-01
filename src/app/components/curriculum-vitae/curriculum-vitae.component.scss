@@ -1,0 +1,170 @@
+:host{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #352e2e;
+    display: grid;
+    position: relative; 
+}
+
+.star{
+    &:before{
+        content: '\2605';      
+    }
+    color: #f6f6f6;
+    fill: #f6f6f6;
+    position: absolute;
+}
+
+.galaxy{
+    position: relative;
+    height: 50%;
+}
+
+.central{
+    font-size: 52px; 
+    line-height: 52px;
+}
+
+.satellites{
+    position: absolute;
+    line-height: 26px;
+    font-size: 26px;
+}
+
+#ul-stars{
+    width: 150px;
+    height: 600px;
+    padding-left: 2.5%;
+}
+
+#br-stars{
+    width: 150px;
+    height: 600px;
+    padding-right: 2.5%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#galaxy-1{
+    .central{
+        top: 50%;
+        margin-top: -26px;
+    }
+
+    .satellites{
+        top: 50%;
+        margin-top: -13px;
+        margin-left: 13px;
+    }
+
+    .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: 45px;
+        }
+        
+        &:nth-child(2){
+            margin-top: -15px;
+            margin-left: 75px;
+        }
+        
+        &:nth-child(3){
+            margin-top: -75px;
+            margin-left: 45px;
+        }
+    }   
+}
+
+#galaxy-2{
+     .central{
+        right: 0;
+        margin-left: -52px;
+     }
+
+     .satellites{
+        right:0;
+        margin-right: 39px;
+        margin-top: 13px;
+        
+     }
+     .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: -75px;
+        }
+        
+        &:nth-child(2){
+            margin-top: 75px;
+            margin-left: -15px;
+        }
+        
+        &:nth-child(3){
+            margin-top: 150px;
+            margin-left: -60px;
+        }
+    }   
+}
+
+#galaxy-3{
+    .central{
+        top: 50%;
+        margin-top: -26px;
+        right: 0;
+    }
+
+    .satellites{
+        top: 50%;
+        right: 0;
+        margin-top: -13px;
+        margin-right: 39px;
+    }
+
+    .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: -45px;
+        }
+        
+        &:nth-child(2){
+            margin-top: -15px;
+            margin-left: -75px;
+        }
+        
+        &:nth-child(3){
+            margin-top: -75px;
+            margin-left: -45px;
+        }
+    }   
+}
+
+#galaxy-4{
+     .central{
+        left: 0;
+        // margin-left: -52px;
+     }
+
+     .satellites{
+        left: 0;
+        margin-left: 13px;
+        margin-top: 13px;
+        
+     }
+
+     .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: 75px;
+        }
+        
+        &:nth-child(2){
+            margin-top: 75px;
+            margin-left: 15px;
+        }
+        
+        &:nth-child(3){
+            margin-top: 150px;
+            margin-left: 60px;
+        }
+    }   
+}
