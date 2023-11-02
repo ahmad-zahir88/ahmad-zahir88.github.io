@@ -2,10 +2,9 @@
     width: 100vw;
     min-height: 100vh;
     background-color: #352e2e;
-    display: grid;
     position: relative; 
     color: white;
-    padding: 45px 0;
+    display: block;
 }
 
 .star{
@@ -145,7 +144,6 @@
 #galaxy-4{
      .central{
         left: 0;
-        // margin-left: -52px;
      }
 
      .satellites{
@@ -177,4 +175,97 @@
     font-size: 60px;
     width: 100%;
     text-align: center;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+#planets{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 50% 50% ;
+    max-width: calc(90% - 300px);
+    margin: 0 auto;
+}
+
+#planet-1 .planet-content{
+    background-color: #3767AF;
+}
+
+#planet-2{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+
+    .planet-content{
+        background-color: #AE2F2F;
+    }
+}
+
+#planet-3{
+    .planet-content{
+        background-color: #97C020;
+    }
+}
+
+.planet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.planet-content{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.front-content{
+    width: 50%;
+    transition: transform 1s 0.5s;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2{
+        font-size: 45px;
+        text-align: center;
+    }
+}
+
+
+.back-content{
+    width: 80%;
+    transition: transform 1s;
+    transform: translateX(150%) scale(0.5) rotateY(57deg);
+    position: absolute;
+    
+    h3{
+        font-size: 35px;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    ul li{
+        font-size: 20px;
+        padding: 5px 0;
+    }
+}
+
+.rotated{
+    .front-content{
+        transform: translateX(-150%) scale(0.5) rotate3d(0,1,0,-57deg);
+        transition: transform 1s;
+    }
+    
+    .back-content{
+        transform: translateX(0) scale(1) rotate3d(0,1,0,0deg);
+        transition: transform 1s 0.5s;
+    }
 }
