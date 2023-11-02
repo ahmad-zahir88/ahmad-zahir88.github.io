@@ -1,0 +1,271 @@
+:host{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #352e2e;
+    position: relative; 
+    color: white;
+    display: block;
+}
+
+.star{
+    &:before{
+        content: '\2605';      
+    }
+    color: #f6f6f6;
+    fill: #f6f6f6;
+    position: absolute;
+}
+
+.galaxy{
+    position: relative;
+    height: 50%;
+}
+
+.central{
+    font-size: 52px; 
+    line-height: 52px;
+}
+
+.satellites{
+    position: absolute;
+    line-height: 26px;
+    font-size: 26px;
+}
+
+#ul-stars{
+    width: 150px;
+    height: 600px;
+    padding-left: 2.5%;
+    position: absolute;
+    top: 150px;
+}
+
+#br-stars{
+    width: 150px;
+    height: 600px;
+    padding-right: 2.5%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#galaxy-1{
+    .central{
+        top: 50%;
+        margin-top: -26px;
+    }
+
+    .satellites{
+        top: 50%;
+        margin-top: -13px;
+        margin-left: 13px;
+    }
+
+    .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: 45px;
+        }
+        
+        &:nth-child(2){
+            margin-top: -15px;
+            margin-left: 75px;
+        }
+        
+        &:nth-child(3){
+            margin-top: -75px;
+            margin-left: 45px;
+        }
+    }   
+}
+
+#galaxy-2{
+     .central{
+        right: 0;
+        margin-left: -52px;
+     }
+
+     .satellites{
+        right:0;
+        margin-right: 39px;
+        margin-top: 13px;
+        
+     }
+     .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: -75px;
+        }
+        
+        &:nth-child(2){
+            margin-top: 75px;
+            margin-left: -15px;
+        }
+        
+        &:nth-child(3){
+            margin-top: 150px;
+            margin-left: -60px;
+        }
+    }   
+}
+
+#galaxy-3{
+    .central{
+        top: 50%;
+        margin-top: -26px;
+        right: 0;
+    }
+
+    .satellites{
+        top: 50%;
+        right: 0;
+        margin-top: -13px;
+        margin-right: 39px;
+    }
+
+    .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: -45px;
+        }
+        
+        &:nth-child(2){
+            margin-top: -15px;
+            margin-left: -75px;
+        }
+        
+        &:nth-child(3){
+            margin-top: -75px;
+            margin-left: -45px;
+        }
+    }   
+}
+
+#galaxy-4{
+     .central{
+        left: 0;
+     }
+
+     .satellites{
+        left: 0;
+        margin-left: 13px;
+        margin-top: 13px;
+        
+     }
+
+     .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: 75px;
+        }
+        
+        &:nth-child(2){
+            margin-top: 75px;
+            margin-left: 15px;
+        }
+        
+        &:nth-child(3){
+            margin-top: 150px;
+            margin-left: 60px;
+        }
+    }   
+}
+
+#title{
+    font-size: 60px;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+#planets{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 50% 50% ;
+    max-width: calc(90% - 300px);
+    margin: 0 auto;
+}
+
+#planet-1 .planet-content{
+    background-color: #3767AF;
+}
+
+#planet-2{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+
+    .planet-content{
+        background-color: #AE2F2F;
+    }
+}
+
+#planet-3{
+    .planet-content{
+        background-color: #97C020;
+    }
+}
+
+.planet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.planet-content{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.front-content{
+    width: 50%;
+    transition: transform 1s 0.5s;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2{
+        font-size: 45px;
+        text-align: center;
+    }
+}
+
+
+.back-content{
+    width: 80%;
+    transition: transform 1s;
+    transform: translateX(150%) scale(0.5) rotateY(57deg);
+    position: absolute;
+    
+    h3{
+        font-size: 35px;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    ul li{
+        font-size: 20px;
+        padding: 5px 0;
+    }
+}
+
+.rotated{
+    .front-content{
+        transform: translateX(-150%) scale(0.5) rotate3d(0,1,0,-57deg);
+        transition: transform 1s;
+    }
+    
+    .back-content{
+        transform: translateX(0) scale(1) rotate3d(0,1,0,0deg);
+        transition: transform 1s 0.5s;
+    }
+}

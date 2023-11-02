@@ -1,0 +1,89 @@
+<div id="ul-stars">
+    <div class="galaxy" id="galaxy-1">
+        <span class="star central"></span>
+        <div class="satellites">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+        </div>
+    </div>
+
+    <div class="galaxy" id="galaxy-2">
+        <span class="star central"></span>
+        <div class="satellites">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+        </div>
+    </div>
+</div>
+
+<div id="br-stars">
+    <div class="galaxy" id="galaxy-3">
+        <span class="star central"></span>
+        <div class="satellites">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+        </div>
+    </div>
+
+    <div class="galaxy" id="galaxy-4">
+        <span class="star central"></span>
+        <div class="satellites">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+        </div>
+    </div>
+</div>
+
+<h1 id="title"><i>Curriculum Vitae</i></h1>
+<div id="planets">
+    <div class="planet" id="planet-1" (click)="is1Rotated = !is1Rotated">
+        <div class="planet-content" [ngClass]="{'rotated' : is1Rotated}">
+            <div class="front-content">
+                <h2>Front-End Web Development</h2>
+            </div>
+            <div class="back-content">
+                <h3>Experience</h3>
+                <ul>
+                    <li>Frontend Web Developer - ANCC (Jul 2022 - Present)</li>
+                    <li>Participant & FWD (Host: BMCA) - ANU TechLauncher (Feb 2021 - Nov 2021)</li>
+                    <li>Freelance Web Developer (2019 - Present)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="planet" id="planet-2" (click)="is2Rotated = !is2Rotated">
+        <div class="planet-content" [ngClass]="{'rotated' : is2Rotated}">
+            <div class="front-content">
+                <h2>Graphic Design & Videography</h2>
+            </div>
+            
+            <div class="back-content">
+                <h3>Experience</h3>
+                <ul>
+                    <li>Director of Photography - Renata Films (Jun 2019) - Link <a href=""> here </a></li>
+                    <li>Vice Head of Video Production Team - Salam UI (Jan 2020 - Dec 2020)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="planet" id="planet-3" (click)="is3Rotated = !is3Rotated">
+        <div class="planet-content" [ngClass]="{'rotated' : is3Rotated}">
+            <div class="front-content">
+                <h2>Machine Learning</h2>
+            </div>
+            <div class="back-content">
+                <h3>Experience</h3>
+                <ul>
+                    <li>Document Analysis & IR Project (ongoing)</li>
+                    <li>Completed Machine Learning Specialisation at ANU (Courses: Intro to ML, Statistical ML, Computer Vision, Document Analysis)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
