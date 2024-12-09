@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "zahir-personal-web:build:production"
+              "buildTarget": "zahir-personal-web:build:production"
             },
             "development": {
-              "browserTarget": "zahir-personal-web:build:development"
+              "buildTarget": "zahir-personal-web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "zahir-personal-web:build"
+            "buildTarget": "zahir-personal-web:build"
           }
         },
         "test": {
