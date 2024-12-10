@@ -11,11 +11,13 @@ export class PersonalInfoComponent implements AfterViewInit {
     prevScrollY = signal<number>(0);
     window = window;
     @HostBinding('class.out') isOut: boolean = false;
+    @HostBinding('style.backgroundPositionY') hostBgPosY?: string;
+
     @HostListener('window:scroll', ['$event'])     
-    
-    onScroll(event: any){       
+    onScroll(event: any){
+        this.hostBgPosY = Math.max(Math.min((100-Math.floor((window.scrollY - this.earthScrollPosition)/(1.5 * window.innerHeight)*100)),100), 0).toString() + '%';
         if(this.isAfterViewInit){
-            if(window.scrollY > 0 && window.scrollY < 3 * this.earthScrollPosition){
+            if(window.scrollY > 0 && window.scrollY < 3 * window.innerHeight){
                 this.isScrolled = true;
                 // going down
                 if(this.prevScrollY() < window.scrollY){
@@ -23,7 +25,7 @@ export class PersonalInfoComponent implements AfterViewInit {
                         window.scrollTo({top: this.earthScrollPosition, behavior: 'smooth'});
                     }
 
-                    if(this.window.scrollY > this.earthScrollPosition){
+                    else if(this.window.scrollY > this.earthScrollPosition){
                         this.isOut = true;
                     }
                 }
