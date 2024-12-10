@@ -25,7 +25,6 @@ export class PersonalInfoComponent implements AfterViewInit {
 
                     if(this.window.scrollY > this.earthScrollPosition){
                         this.isOut = true;
-                        // window.scrollTo({top: 3 * this.earthScrollPosition, behavior: 'smooth'});
                     }
                 }
                 // going up

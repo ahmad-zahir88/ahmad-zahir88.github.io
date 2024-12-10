@@ -189,8 +189,16 @@
     margin: 0 auto;
 }
 
-#planet-1 .planet-content{
-    background-color: #3767AF;
+.planet-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    perspective: 1000px;
+}
+
+#planet-1 .planet{
+    background-image: radial-gradient(#3767AF 0%, #0B3F8D 75%);
 }
 
 #planet-2{
@@ -198,25 +206,18 @@
     grid-row-end: 3;
     grid-column-start: 2;
 
-    .planet-content{
-        background-color: #AE2F2F;
+    .planet{
+        background-image: radial-gradient(#AE2F2F 0%, #8d0a0a 75%);
     }
 }
 
 #planet-3{
-    .planet-content{
-        background-color: #97C020;
+    .planet{
+        background-image: radial-gradient(#97C020 0%, #677d25 75%);
     }
 }
 
 .planet{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0;
-}
-
-.planet-content{
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -225,16 +226,27 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    cursor: pointer;    
+    transform-style: preserve-3d;
+    
+    background-size: 400% 400%;
+    background-position: 75% 50%;
+    transition: background-position 1.25s;
+    &.rotated{
+        background-position: 110% 50%;
+    }
 }
 
 .front-content{
     width: 50%;
-    transition: transform 1s 0.5s;
-    position: absolute;
+    opacity: 1;
+    text-shadow: rgba(0,0,0,0.25) 0px 4px 8px;
+    transition: all 0.75s 0.5s;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+
     h2{
         font-size: 45px;
         text-align: center;
@@ -242,12 +254,14 @@
 }
 
 
+
 .back-content{
     width: 80%;
-    transition: transform 1s;
-    transform: translateX(150%) scale(0.5) rotateY(57deg);
+    transform: rotateY(90deg);
+    transition: all 0.75s;
     position: absolute;
-    
+    opacity: 0;
+    text-shadow: rgba(0, 0, 0, 0.25) 50px 10px 3px;
     h3{
         font-size: 35px;
         text-align: center;
@@ -260,14 +274,18 @@
     }
 }
 
-.rotated{
+.planet.rotated{
     .front-content{
-        transform: translateX(-150%) scale(0.5) rotate3d(0,1,0,-57deg);
-        transition: transform 1s;
+        transition: all 0.75s;
+        text-shadow: rgba(0, 0, 0, 0.25) -50px 10px 3px;
+        transform: rotateY(-90deg);
+        opacity: 1;
     }
     
     .back-content{
-        transform: translateX(0) scale(1) rotate3d(0,1,0,0deg);
-        transition: transform 1s 0.5s;
+        transition: transform 0.75s 0.5s, opacity 1s 0.5s;
+        text-shadow: rgba(0,0,0,0.25) 0px 4px 8px;
+        transform: rotateY(0deg);
+        opacity: 1;
     }
 }

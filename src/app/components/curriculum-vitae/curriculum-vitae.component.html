@@ -38,13 +38,13 @@
     </div>
 </div>
 
-<div id="planets">
-    <div class="planet" id="planet-1" (click)="is1Rotated = !is1Rotated">
-        <div class="planet-content" [ngClass]="{'rotated' : is1Rotated}">
-            <div class="front-content">
+<div id="planets" #planets>
+    <div class="planet-container" id="planet-1">
+        <div class="planet" [class.rotated]="is1Rotated" (click)="is1Rotated = !is1Rotated">
+            <div class="front-content" [ngStyle]="transformOriginStyle()">
                 <h2>Front-End Web Development</h2>
             </div>
-            <div class="back-content">
+            <div class="back-content" [ngStyle]="transformOriginStyle()">
                 <h3>Experience</h3>
                 <ul>
                     <li>Frontend Web Developer - ANCC (Jul 2022 - Present)</li>
@@ -55,13 +55,12 @@
         </div>
     </div>
 
-    <div class="planet" id="planet-2" (click)="is2Rotated = !is2Rotated">
-        <div class="planet-content" [ngClass]="{'rotated' : is2Rotated}">
-            <div class="front-content">
+    <div class="planet-container" id="planet-2">
+        <div class="planet" [class.rotated]="is2Rotated" (click)="is2Rotated = !is2Rotated">
+            <div class="front-content" [ngStyle]="transformOriginStyle()">
                 <h2>Graphic Design & Videography</h2>
             </div>
-            
-            <div class="back-content">
+            <div class="back-content" [ngStyle]="transformOriginStyle()">
                 <h3>Experience</h3>
                 <ul>
                     <li>Director of Photography - Renata Films (Jun 2019) - Link <a href=""> here </a></li>
@@ -71,15 +70,14 @@
         </div>
     </div>
 
-    <div class="planet" id="planet-3" (click)="is3Rotated = !is3Rotated">
-        <div class="planet-content" [ngClass]="{'rotated' : is3Rotated}">
-            <div class="front-content">
+    <div class="planet-container" id="planet-3">
+        <div class="planet" [class.rotated]="is3Rotated" (click)="is3Rotated = !is3Rotated">
+            <div class="front-content" [ngStyle]="transformOriginStyle()">
                 <h2>Machine Learning</h2>
             </div>
-            <div class="back-content">
+            <div class="back-content" [ngStyle]="transformOriginStyle()">
                 <h3>Experience</h3>
                 <ul>
-                    <li>Document Analysis & IR Project (ongoing)</li>
                     <li>Completed Machine Learning Specialisation at ANU (Courses: Intro to ML, Statistical ML, Computer Vision, Document Analysis)</li>
                 </ul>
             </div>
