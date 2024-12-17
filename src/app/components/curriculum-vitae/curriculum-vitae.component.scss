@@ -198,7 +198,7 @@
 }
 
 #planet-1 .planet{
-    background-image: radial-gradient(#3767AF 0%, #0B3F8D 75%);
+    background-image: radial-gradient(#3767AF 0%, #03275d 75%);
 }
 
 #planet-2{
@@ -207,13 +207,13 @@
     grid-column-start: 2;
 
     .planet{
-        background-image: radial-gradient(#AE2F2F 0%, #8d0a0a 75%);
+        background-image: radial-gradient(#AE2F2F 0%, #5a0202 75%);
     }
 }
 
 #planet-3{
     .planet{
-        background-image: radial-gradient(#97C020 0%, #677d25 75%);
+        background-image: radial-gradient(#97C020 0%, #374901 75%);
     }
 }
 
@@ -229,11 +229,11 @@
     cursor: pointer;    
     transform-style: preserve-3d;
     
-    background-size: 400% 400%;
+    background-size: 500% 500%;
     background-position: 75% 50%;
     transition: background-position 1.25s;
     &.rotated{
-        background-position: 110% 50%;
+        background-position: 105% 50%;
     }
 }
 
