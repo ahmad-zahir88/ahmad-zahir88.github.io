@@ -1,5 +1,7 @@
 @if(isOut){
-    <div id="placeholder"></div>
+    <div id="placeholder">
+        <p id="quote" [ngStyle]="{ transform: getQuoteTransformStyle() }"> "Shoot for the moon, because even if you miss, you’ll land among the stars" </p>
+    </div>
 }
 
 <div id="container" [ngClass]="{out: isOut}" [ngStyle]="{bottom: isOut ? earthScrollPosition - prevScrollY() + 'px' : ''}">

@@ -23,7 +23,7 @@ export class PersonalInfoComponent implements AfterViewInit {
                 if(this.prevScrollY() < window.scrollY){
                     if(window.scrollY < this.earthScrollPosition){
                         window.scrollTo({top: this.earthScrollPosition, behavior: 'smooth'});
-                    }
+                    } 
 
                     else if(this.window.scrollY > this.earthScrollPosition){
                         this.isOut = true;
@@ -34,7 +34,10 @@ export class PersonalInfoComponent implements AfterViewInit {
                     if(window.scrollY < (this.earthScrollPosition - 10)){
                         this.isOut = false;
                         window.scrollTo({top: 0, behavior: 'smooth'});
-                    } else if (window.scrollY > this.earthScrollPosition){
+                    } else if (window.scrollY > window.innerHeight * 2){
+                        window.scrollTo({top: window.innerHeight * 2, behavior: 'smooth'});
+                    } 
+                    else if (window.scrollY < window.innerHeight * 1.5){
                         window.scrollTo({top: this.earthScrollPosition, behavior: 'smooth'});
                     }
                 }
@@ -58,4 +61,16 @@ export class PersonalInfoComponent implements AfterViewInit {
         window.scrollTo({top: 0});      
         this.isAfterViewInit = true;       
     }
+
+    getQuoteTransformStyle(){
+        if(window.scrollY > window.innerHeight){
+            const percentage = Math.floor((window.scrollY - window.innerHeight)/(window.innerHeight * 2)*100);
+            if(percentage <= 50){
+                return `translate(-50%,calc(${window.scrollY}px + ${percentage}vh - 50%))`;
+            }
+            return `translate(-50%,calc(${window.innerHeight * 2}px + 50vh - 50%))`;
+        }
+        return 'translate(-50%,-100%)';
+    }
+
 }
