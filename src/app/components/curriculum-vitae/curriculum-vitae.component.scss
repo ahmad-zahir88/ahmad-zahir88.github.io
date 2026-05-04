@@ -1,0 +1,291 @@
+:host{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #352e2e;
+    position: relative; 
+    color: white;
+    display: block;
+    box-shadow: 0px 15px 4px 0px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.star{
+    &:before{
+        content: '\2605';      
+    }
+    color: #f6f6f6;
+    fill: #f6f6f6;
+    position: absolute;
+}
+
+.galaxy{
+    position: relative;
+    height: 50%;
+}
+
+.central{
+    font-size: 52px; 
+    line-height: 52px;
+}
+
+.satellites{
+    position: absolute;
+    line-height: 26px;
+    font-size: 26px;
+}
+
+#ul-stars{
+    width: 150px;
+    height: 600px;
+    padding-left: 2.5%;
+    position: absolute;
+    top: 150px;
+}
+
+#br-stars{
+    width: 150px;
+    height: 600px;
+    padding-right: 2.5%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#galaxy-1{
+    .central{
+        top: 50%;
+        margin-top: -26px;
+    }
+
+    .satellites{
+        top: 50%;
+        margin-top: -13px;
+        margin-left: 13px;
+    }
+
+    .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: 45px;
+        }
+        
+        &:nth-child(2){
+            margin-top: -15px;
+            margin-left: 75px;
+        }
+        
+        &:nth-child(3){
+            margin-top: -75px;
+            margin-left: 45px;
+        }
+    }   
+}
+
+#galaxy-2{
+     .central{
+        right: 0;
+        margin-left: -52px;
+     }
+
+     .satellites{
+        right:0;
+        margin-right: 39px;
+        margin-top: 13px;
+        
+     }
+     .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: -75px;
+        }
+        
+        &:nth-child(2){
+            margin-top: 75px;
+            margin-left: -15px;
+        }
+        
+        &:nth-child(3){
+            margin-top: 150px;
+            margin-left: -60px;
+        }
+    }   
+}
+
+#galaxy-3{
+    .central{
+        top: 50%;
+        margin-top: -26px;
+        right: 0;
+    }
+
+    .satellites{
+        top: 50%;
+        right: 0;
+        margin-top: -13px;
+        margin-right: 39px;
+    }
+
+    .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: -45px;
+        }
+        
+        &:nth-child(2){
+            margin-top: -15px;
+            margin-left: -75px;
+        }
+        
+        &:nth-child(3){
+            margin-top: -75px;
+            margin-left: -45px;
+        }
+    }   
+}
+
+#galaxy-4{
+     .central{
+        left: 0;
+     }
+
+     .satellites{
+        left: 0;
+        margin-left: 13px;
+        margin-top: 13px;
+        
+     }
+
+     .satellites .star{
+        &:nth-child(1){
+            margin-top: 45px;
+            margin-left: 75px;
+        }
+        
+        &:nth-child(2){
+            margin-top: 75px;
+            margin-left: 15px;
+        }
+        
+        &:nth-child(3){
+            margin-top: 150px;
+            margin-left: 60px;
+        }
+    }   
+}
+
+#title{
+    font-size: 60px;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+#planets{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 50% 50% ;
+    max-width: calc(90% - 300px);
+    margin: 0 auto;
+}
+
+.planet-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    perspective: 1000px;
+}
+
+#planet-1 .planet{
+    background-image: radial-gradient(#3767AF 0%, #03275d 75%);
+}
+
+#planet-2{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+
+    .planet{
+        background-image: radial-gradient(#AE2F2F 0%, #5a0202 75%);
+    }
+}
+
+#planet-3{
+    .planet{
+        background-image: radial-gradient(#97C020 0%, #374901 75%);
+    }
+}
+
+.planet{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;    
+    transform-style: preserve-3d;
+    
+    background-size: 500% 500%;
+    background-position: 75% 50%;
+    transition: background-position 1.25s;
+    &.rotated{
+        background-position: 105% 50%;
+    }
+}
+
+.front-content{
+    width: 50%;
+    opacity: 1;
+    text-shadow: rgba(0,0,0,0.25) 0px 4px 8px;
+    transition: all 0.75s 0.5s;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+        font-size: 45px;
+        text-align: center;
+    }
+}
+
+
+
+.back-content{
+    width: 80%;
+    transform: rotateY(90deg);
+    transition: all 0.75s;
+    position: absolute;
+    opacity: 0;
+    text-shadow: rgba(0, 0, 0, 0.25) 50px 10px 3px;
+    h3{
+        font-size: 35px;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    ul li{
+        font-size: 20px;
+        padding: 5px 0;
+    }
+}
+
+.planet.rotated{
+    .front-content{
+        transition: all 0.75s;
+        text-shadow: rgba(0, 0, 0, 0.25) -50px 10px 3px;
+        transform: rotateY(-90deg);
+        opacity: 1;
+    }
+    
+    .back-content{
+        transition: transform 0.75s 0.5s, opacity 1s 0.5s;
+        text-shadow: rgba(0,0,0,0.25) 0px 4px 8px;
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
