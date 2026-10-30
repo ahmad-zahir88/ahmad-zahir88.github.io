@@ -1,10 +1,11 @@
 import { NgClass, NgStyle } from '@angular/common';
-import { Component, HostListener, AfterViewInit, ViewChild, ElementRef, HostBinding, computed, signal } from '@angular/core';
+import { Component, HostListener, AfterViewInit, ViewChild, ElementRef, HostBinding, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-personal-info',
     templateUrl: './personal-info.component.html',
     styleUrls: ['./personal-info.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgClass, NgStyle]
 })
 export class PersonalInfoComponent implements AfterViewInit {

@@ -1,10 +1,11 @@
-import { Component, ElementRef, AfterViewInit, signal, ViewChild, computed } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, signal, ViewChild, computed, ChangeDetectionStrategy } from '@angular/core';
 import { NgStyle } from '@angular/common';
 
 @Component({
     selector: 'app-curriculum-vitae',
     templateUrl: './curriculum-vitae.component.html',
     styleUrls: ['./curriculum-vitae.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgStyle]
 })
 export class CurriculumVitaeComponent implements AfterViewInit{
